@@ -117,12 +117,33 @@ class Text{
 }
 class Comida extends Obj{
     des_comida(){
-        
-    }
+            let img = new Image()
+            img.src = this.a
+            des.drawImage(img,this.x, this.y, this.w, this.h)
+        }
     atual_comida(){
-        
+        this.y += 3
+        if(this.y >= 780){
+            this.y = -100
+            this.x = Math.floor(Math.random() * ((416 - 2 + 1) + 2)) 
+        }
+        if(personagem.pts >= 10){
+            console.log('era pra ir mais rapido')
+            this.vel = 3.5
+            
+            this.y += this.vel
+        }
+        if(personagem.pts >= 20){
+            this.vel = 4
+            this.y += this.vel
+        }
+        if(personagem.pts >= 30){
+            this.vel = 4.5
+            this.y += this.vel
+        }
     }
     comidaRecomeca(){
-       
+        this.y = -100
+        this.x = Math.floor(Math.random() * ((416 - 2 + 1) + 2)) 
     }
 }
