@@ -97,7 +97,18 @@ function desenha(){
     }  
 }
 function atualiza(){
-
+    if(jogar){//atualiza
+        macaPodre.atual_boneco2()
+        bananaEstragada.atual_boneco2()
+        sushi.atual_boneco2()
+        personagem.atual_boneco()
+        comida1.atual_comida()
+        comida2.atual_comida()
+        personagem.anim('assutado_')
+        pontos()
+        colisao()
+        game_over()
+    }
 }
 function main(){
     des.clearRect(0,0,500,700)
