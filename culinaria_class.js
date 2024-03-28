@@ -97,13 +97,17 @@ class boneco2 extends boneco{
         this.x = Math.floor(Math.random() * ((416 - 2 + 1) + 2)) // quando o alimento sair da tela
     }
 }
-class Estrada extends Obj{
-    des_estrada(){
-
+class Campo extends Obj{
+    des_campo(){
+        des.fillStyle = this.a
+        des.fillRect(this.x,this.y,this.w,this.h)
     }
 
-    mov_est(){
-       
+    mov_campo(){
+        this.y += 4
+        if(this.y >= 780){
+            this.y = -100
+        }
     }
 }
 class Text{
