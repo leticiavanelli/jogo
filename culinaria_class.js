@@ -71,10 +71,30 @@ class boneco extends Obj{
     }
 }
 class boneco2 extends boneco{
+    vel = 3
     atual_boneco2(){
-        
+        this.y += this.vel
+        if(this.y >= 780){
+            this.recomeca()
+        }
+        if(personagem.pts >= 10){
+            console.log('era pra ir mais rapido')
+            this.vel = 3.5
+            
+            this.y += this.vel
+        }
+        if(personagem.pts >= 20){
+            this.vel = 4
+            this.y += this.vel
+        }
+        if(personagem.pts >= 30){
+            this.vel = 4.5
+            this.y += this.vel
+        }
     }
     recomeca(){
+        this.y = -100
+        this.x = Math.floor(Math.random() * ((416 - 2 + 1) + 2)) // quando o alimento sair da tela
     }
 }
 class Estrada extends Obj{
