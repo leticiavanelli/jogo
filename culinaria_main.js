@@ -76,10 +76,25 @@ function colisao(){
     }
 }
 function voltar(){
-    
+    window.history.back()
 }
 function desenha(){
-    
+    t1.des_text('Pontos: ',360,24,'black','28px Times')
+    t2.des_text(personagem.pts,460,24,'black','28px Times')
+    t3.des_text('Vida: ',40,24,'black','28px Times')
+    t4.des_text(personagem.vida,100,24,'black','28px Times')
+
+    if(jogar){
+        macaPodre.des_img()
+        bananaEstragada.des_img()
+        sushi.des_img()
+        personagem.des_img()
+        comida1.des_comida()
+        comida2.des_comida()
+    }else{
+        
+        t5.des_text('Game Over ',150,350,'rgba(14, 13, 13, 0.904)','40px Georgia', 'font-weight: bolder')
+    }  
 }
 function atualiza(){
 
