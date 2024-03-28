@@ -34,12 +34,46 @@ document.addEventListener('keyup', (e)=>{
     }
 })
 function game_over(){
-    
+    if(personagem.vida <=0){
+        jogar = false
+        mastigando.pause()
+        fundo.pause()
+        botaoVoltar.style.display = 'flex'
+        // música com o jogo parado
+    }
 }
 function pontos(){
+    if(personagem.point(macaPodre)){
+        personagem.pts += 0
+    }else if(personagem.point(bananaEstragada)){
+        personagem.pts += 0
+    }
 }
 function colisao(){
-    
+    if(personagem.colid(macaPodre)){
+        personagem.vida -= 1
+        macaPodre.recomeca()
+        mastigando.play()
+    }else if(personagem.colid(bananaEstragada)){
+        personagem.vida -= 1
+        bananaEstragada.recomeca()
+        mastigando.play()
+    }else if(personagem.colid(sushi)){
+        personagem.pts += 1
+        sushi.recomeca()
+        mastigando.play()
+    }if(personagem.colid(comida1)){
+        console.log('comeu')
+        personagem.pts += 1
+        mastigando.play()
+        comida1.comidaRecomeca()
+    }
+    else if(personagem.colid(comida2)){
+        console.log('comeu')
+        personagem.pts += 1
+        comida2.comidaRecomeca()
+        mastigando.play()
+    }
 }
 function voltar(){
     
