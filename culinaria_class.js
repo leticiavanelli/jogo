@@ -34,12 +34,13 @@ class boneco extends Obj{
     }
 }
 class boneco2 extends boneco{
-    atual_boneco2(){
-        
-    }
+      
+      
+        }
+    
     recomeca(){
     }
-}
+
 class Estrada extends Obj{
     des_estrada(){
 
@@ -51,7 +52,11 @@ class Estrada extends Obj{
 }
 class Text{
     des_text(text,x,y,cor,font){
-        
+        des.fillStyle = cor
+        des.lineWidth = '5'
+        des.font = font
+        des.fillText(text,x,y)
+    
     }
 }
 class Comida extends Obj{
