@@ -97,16 +97,19 @@ class boneco2 extends boneco{
             this.y += this.vel
         }
     }
+
     recomeca(){
         this.y = -100
         this.x = Math.floor(Math.random() * ((416 - 2 + 1) + 2)) // quando o alimento sair da tela
     }
+
 }
 class Campo extends Obj{
     des_campo(){
         des.fillStyle = this.a
         des.fillRect(this.x,this.y,this.w,this.h)
-    }
+    }    
+
 
     mov_campo(){
         this.y += 4
@@ -117,7 +120,11 @@ class Campo extends Obj{
 }
 class Text{
     des_text(text,x,y,cor,font){
-        
+        des.fillStyle = cor
+        des.lineWidth = '5'
+        des.font = font
+        des.fillText(text,x,y)
+    
     }
 }
 class Comida extends Obj{
