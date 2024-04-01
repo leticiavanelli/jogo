@@ -21,8 +21,8 @@ class boneco extends Obj{
     dirX = 0
     dirY = 0
     pts = 0
-    vida = 0
-    frame = 0
+    vida = 5
+    frame = 1
     tempo = 0
 
     anim(nome){
@@ -34,7 +34,7 @@ class boneco extends Obj{
         if(this.frame>4){
             this.frame = 1
         }
-        this.a = "assets/img/"+nome+this.frame+".png"
+        this.a = "./assets/img/"+nome+this.frame+".png"
     }
     
     atual_boneco(){
@@ -55,7 +55,7 @@ class boneco extends Obj{
             this.y = 300  
     }
     }
-    point(){
+    point(objeto){
         //pontos
         if((objeto.y>=400)&&(objeto.y <= 500)){
             return true
@@ -63,7 +63,7 @@ class boneco extends Obj{
             false
         }
     }
-    colid(){
+    colid(objeto){
         //colisão
         if((this.x < objeto.x + objeto.w)&&
           (this.x + this.w > objeto.x)&&

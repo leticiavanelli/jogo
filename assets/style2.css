@@ -19,7 +19,7 @@ body{
     margin: auto;
     margin-top: 50px;
     font-weight: bolder;
-    background-image: url('./assets/img/fundoinicio.png');
+    background-image: url('./img/fundoinicio.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
